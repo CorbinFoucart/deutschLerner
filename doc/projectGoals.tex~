@@ -1,0 +1,91 @@
+% Goals for the overall development
+\documentclass[11pt]{article}
+\usepackage[margin = 0.5 in]{geometry}
+\setlength\parindent{0pt}
+\title{DeutschLerner Project Goals}
+\author{Corbin Foucart}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Interface \& GUI}
+Rough Ideas:
+
+\begin{enumerate}
+\item 2-3 pages: menu and quiz page
+\end{enumerate}
+
+\subsection{Menu}
+The idea here is that the user has the ability to access all of the features of the application from this menu.
+Perhaps some basic stuff about recently taken quizzes and stats. The menu should be a landing page that
+allows the user to move to other pages. Page Structure: \\
+
+\begin{enumerate}
+\item Menu
+  \begin{enumerate}
+    \item Take quiz page
+      \begin{enumerate}
+      \item Right now let's focus on building something that just tests the user on all of the questions in
+        the database. It might be better for applying the memory algorithms.
+      \item This would be some type of gui page that simply has a text field for the question and allows 
+        the user text boxes to type the answers. For genders, this might include two text boxes. For verbs,
+        I can imagine this consisting of a single text field for regular verbs and several text fields for 
+        irregular verbs.
+      \end{enumerate}
+    \item Database editing
+  \end{enumerate}
+\end{enumerate}
+
+\subsection{Quiz}
+
+\section{Underlying Structure}
+The idea is that all data can be appropriately saved to comma separated value files 
+and later read in by the program.
+
+\subsection{Question structure}
+There should ideally be several types of question: nouns [article + noun + plural], adjectives [word], regular verbs [word], irregular verbs [3 verb forms], verb / preposition combos [infinitive + preposition]. Delimiters for each value are as follows:
+
+\begin{enumerate}
+\item Noun - N : ``der Stock, St{\"o}cke'', use ``-'' for when no plural exists
+\item Regular Verb - RV : ``rudern''
+\item Irregular Verb - IV
+\item Adjective - A
+\item Preposition - P
+\item Preposition Verb combo - VP
+\item Phrase - P
+\end{enumerate}
+
+This will be achieved by keeping a comma separated value sheet. Each line will represent a single question: \\
+
+[question type delimiter], [question grouping number], [question string], [answer string] \*
+
+The question string will always be displayed. The answer string will be parsed and will quiz the user appropriately.
+
+\section{Building Goals}
+\begin{enumerate}
+\item build csv writer
+\item build csv reader
+\item build csv merger
+\item combine the three into a console driven database addition program
+\item write a parser that can parse things into the question text fields
+\item write a console based program that just displays the stuff without user 
+  input.
+\item write the quizzing program with the math integration. Should be totally a console program 
+  at this point.
+\item design and write the gui. Integrate it into the project
+\item color the gui to look cool.
+\end{enumerate}
+
+Notes:
+>>> import datetime
+>>> a = datetime.datetime.now()
+>>> b = datetime.datetime.now()
+>>> c = b - a
+datetime.timedelta(0, 8, 562000)
+>>> divmod(c.days * 86400 + c.seconds, 60)
+(0, 8)      # 0 minutes, 8 seconds
+
+
+\end{document}
